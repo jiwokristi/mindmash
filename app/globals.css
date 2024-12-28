@@ -18,7 +18,7 @@
 *,
 *::before,
 *::after {
-  @apply m-0 p-0 box-border;
+  @apply m-0 box-border p-0;
 }
 
 @layer base {
@@ -27,17 +27,17 @@
   }
 
   body {
-    @apply text-16 text-gray-900 leading dark:text-white;
+    @apply text-16 leading text-gray-900 dark:text-white;
   }
 }
 
 @layer components {
   #MeshGradient {
-    @apply fixed top-0 left-0 w-screen h-screen overflow-hidden dark:bg-gradient-to-br dark:from-deep-space-1 dark:to-deep-space-2 -z-10;
+    @apply fixed left-0 top-0 -z-10 h-screen w-screen overflow-hidden dark:bg-gradient-to-br dark:from-deep-space-1 dark:to-deep-space-2;
   }
 
   #MeshGradient-meshContainer {
-    @apply w-full h-full;
+    @apply h-full w-full;
 
     filter: url(#goo) blur(40px);
   }
@@ -50,7 +50,8 @@
     width: var(--circle-size);
     height: var(--circle-size);
     opacity: 1;
-    background: radial-gradient(circle at center, rgba(var(--light-blue), 0.8) 0, rgba(var(--light-blue), 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(var(--light-blue), 0.8) 0, rgba(var(--light-blue), 0) 50%)
+      no-repeat;
     mix-blend-mode: var(--blending);
     transform-origin: center center;
     animation: moveVertically 30s ease infinite;
@@ -78,7 +79,8 @@
     width: var(--circle-size);
     height: var(--circle-size);
     opacity: 1;
-    background: radial-gradient(circle at center, rgba(var(--turquioise), 0.8) 0, rgba(var(--turquioise), 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(var(--turquioise), 0.8) 0, rgba(var(--turquioise), 0) 50%)
+      no-repeat;
     mix-blend-mode: var(--blending);
     transform-origin: calc(50% + 400px);
     animation: moveInCircle 40s linear infinite;
@@ -92,7 +94,8 @@
     width: var(--circle-size);
     height: var(--circle-size);
     opacity: 1;
-    background: radial-gradient(circle at center, rgba(var(--crayon-red), 0.8) 0, rgba(var(--crayon-red), 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(var(--crayon-red), 0.8) 0, rgba(var(--crayon-red), 0) 50%)
+      no-repeat;
     mix-blend-mode: var(--blending);
     transform-origin: calc(50% - 200px);
     animation: moveHorizontally 40s ease infinite;
@@ -113,13 +116,13 @@
   }
 
   #MeshGradient-meshContainer-interactive {
-    @apply fixed -top-1/2 -left-1/2 w-full h-full opacity-70 mix-blend-hard-light;
+    @apply fixed -left-1/2 -top-1/2 h-full w-full opacity-70 mix-blend-hard-light;
 
     background: radial-gradient(circle at center, rgba(var(--mindaro), 0.8) 0, rgba(var(--mindaro), 0) 50%) no-repeat;
   }
 
   .MeshGradient-goo {
-    @apply fixed top-0 left-0 w-0 h-0;
+    @apply fixed left-0 top-0 h-0 w-0;
   }
 }
 

@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "MindMash!",
-  description: "Test your knowledge with fun and engaging quizzes! Explore a wide range of topics, challenge your friends, and track your progress. Ready to become a quiz master?",
+  description:
+    "Test your knowledge with fun and engaging quizzes! Explore a wide range of topics, challenge your friends, and track your progress. Ready to become a quiz master?",
 };
 
 export default function RootLayout({
@@ -26,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <MeshGradient />
         {children}
       </body>

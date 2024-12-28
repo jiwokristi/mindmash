@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
 export default {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -43,7 +43,7 @@ export default {
       80: "8rem",
       96: "9.6rem",
       128: "12.8rem",
-      full: "9999px"
+      full: "9999px",
     },
 
     //* ----- TYPOGRAPHY SYSTEM -----
@@ -70,7 +70,7 @@ export default {
       md: "1.375",
       lg: "1.5",
       xl: "1.625",
-      '2xl': "2",
+      "2xl": "2",
     },
     extend: {
       colors: {
@@ -78,7 +78,7 @@ export default {
         "deep-space-2": "#010f1b",
       },
       rotate: {
-        360: "360deg"
+        360: "360deg",
       },
     },
   },
@@ -105,9 +105,9 @@ export default {
         },
         ".no-scrollbar": {
           // IE and Edge.
-          '-ms-overflow-style': 'none',
+          "-ms-overflow-style": "none",
           // Firefox.
-          'scrollbar-width': 'none',
+          "scrollbar-width": "none",
         },
       });
     }),
