@@ -9,7 +9,6 @@ export enum Locales {
 export const routing = defineRouting({
   // A list of all locales that are supported
   locales: Object.values(Locales),
-
   // Used when no locale matches
   defaultLocale: Locales.EN,
 });

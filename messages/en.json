@@ -16,12 +16,14 @@
       },
       "validation": {
         "email": {
-          "invalid-email": "Please enter a valid email address.",
-          "required": "Please enter your email."
+          "invalid-email": "Please enter a valid email address."
         },
-        "password": "Password must be at least 8 characters long."
+        "password": {
+          "min": "Password must be at least 8 characters long.",
+          "whitespace": "Password cannot contain spaces."
+        }
       }
     }
   },
-  "texterify_timestamp": "2024-12-29T02:16:56Z"
+  "texterify_timestamp": "2024-12-29T10:01:44Z"
 }

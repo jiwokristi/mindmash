@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
@@ -8,12 +8,19 @@ import { Input } from "@/components/input/Input";
 import { Password } from "@/components/input/Password";
 import { Button } from "@/components/button/Button";
 
-import { AuthValues, schema } from "@/utils/validations/auth";
+import { AuthValues, useAuthValidation } from "@/utils/hooks/validation.auth";
 
 import { signup } from "./actions";
 
-export const AuthForm = () => {
+interface AuthFormProps {
+  isAuthenticated: boolean;
+}
+
+export const AuthForm = ({ isAuthenticated }: AuthFormProps) => {
   const t = useTranslations("AUTH");
+  const locale = useLocale();
+
+  const { schema } = useAuthValidation();
 
   const {
     register,
@@ -28,7 +35,7 @@ export const AuthForm = () => {
   const disabled = !schema.safeParse(formValues).success;
 
   const signupHandler = async (values: AuthValues) => {
-    await signup(values);
+    await signup(values, locale);
   };
 
   return (

@@ -4,9 +4,9 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
-import { AuthValues } from "@/utils/validations/auth";
+import { AuthValues } from "@/utils/hooks/validation.auth";
 
-export async function signup(payload: AuthValues) {
+export async function signup(payload: AuthValues, locale: string) {
   const supabase = await createClient();
 
   const { error } = await supabase.auth.signUp(payload);
@@ -15,11 +15,10 @@ export async function signup(payload: AuthValues) {
     redirect("/error");
   }
 
-  revalidatePath("/", "layout");
-  redirect("/");
+  revalidatePath("/" + locale, "layout");
 }
 
-export async function signin(payload: AuthValues) {
+export async function signin(payload: AuthValues, locale: string) {
   const supabase = await createClient();
 
   const { error } = await supabase.auth.signInWithPassword(payload);
@@ -28,6 +27,6 @@ export async function signin(payload: AuthValues) {
     redirect("/error");
   }
 
-  revalidatePath("/", "layout");
-  redirect("/");
+  revalidatePath("/" + locale, "layout");
+  redirect(`/${locale}`);
 }
