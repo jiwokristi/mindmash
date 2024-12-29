@@ -23,7 +23,7 @@ export const Input = forwardRef(
             {label}
           </label>
         )}
-        <div className="relative bg-white">
+        <div className="relative rounded-8 bg-white">
           {startAdornment}
           <input
             ref={ref}

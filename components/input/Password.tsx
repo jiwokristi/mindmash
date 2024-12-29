@@ -20,7 +20,7 @@ export const Password = forwardRef(
   ({ inputProps, labelProps, label, error, helperText, ...props }: PasswordProps, ref: Ref<HTMLInputElement>) => {
     const params = useParams();
     const isArabic = params.locale === Locales.AR;
-    console.log("isArabic", isArabic);
+
     const [showPassword, setShowPassword] = useState(false);
     const type = showPassword ? "text" : "password";
 
@@ -31,7 +31,7 @@ export const Password = forwardRef(
             {label}
           </label>
         )}
-        <div className="relative bg-white">
+        <div className="relative rounded-8 bg-white">
           <input
             ref={ref}
             type={type}
@@ -50,9 +50,9 @@ export const Password = forwardRef(
             })}
           >
             {showPassword ? (
-              <span className="ph ph-[eye] -z-10 text-20 text-gray-600" />
+              <span className="-z-10 text-20 text-gray-600 ph ph-[eye]" />
             ) : (
-              <span className="ph ph-[eye-slash] -z-10 text-20 text-gray-600" />
+              <span className="-z-10 text-20 text-gray-600 ph ph-[eye-slash]" />
             )}
           </IconButton>
           <div
