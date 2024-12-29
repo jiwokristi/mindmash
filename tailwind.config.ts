@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
+import phosphorIcons from "phosphor-icons-tailwindcss";
 
 export default {
   darkMode: "class",
@@ -76,6 +77,12 @@ export default {
       colors: {
         "deep-space-1": "#011627",
         "deep-space-2": "#010f1b",
+        "light-blue": "rgb(184, 243, 255)",
+        violet: "rgb(168, 130, 221)",
+        turquioise: "rgb(100, 220, 255)",
+        "crayon-red": "rgb(232, 49, 81)",
+        vanilla: "rgb(248, 244, 166)",
+        mindaro: "rgb(219, 254, 135)",
       },
       rotate: {
         360: "360deg",
@@ -111,5 +118,6 @@ export default {
         },
       });
     }),
+    phosphorIcons(),
   ],
 } satisfies Config;

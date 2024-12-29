@@ -1,0 +1,27 @@
+{
+  "AUTH": {
+    "form": {
+      "button": {
+        "oauth": {
+          "google": "Continue with Google"
+        },
+        "sign-up": "Sign up"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "header": "Get started now!",
+      "password": {
+        "label": "Password"
+      },
+      "validation": {
+        "email": {
+          "invalid-email": "Please enter a valid email address.",
+          "required": "Please enter your email."
+        },
+        "password": "Password must be at least 8 characters long."
+      }
+    }
+  },
+  "texterify_timestamp": "2024-12-29T02:16:56Z"
+}
