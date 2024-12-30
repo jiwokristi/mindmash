@@ -25,14 +25,11 @@ export const AuthForm = ({ isAuthenticated }: AuthFormProps) => {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
+    formState: { errors, isSubmitting, isValid },
   } = useForm<AuthValues>({
     resolver: zodResolver(schema),
     mode: "onTouched",
   });
-  const formValues = watch();
-  const disabled = !schema.safeParse(formValues).success;
 
   const signupHandler = async (values: AuthValues) => {
     await signup(values, locale);
@@ -71,11 +68,16 @@ export const AuthForm = ({ isAuthenticated }: AuthFormProps) => {
         helperText={errors.password?.message}
         error={!!errors.password}
       />
-      <Button disabled={disabled} aria-disabled={disabled} className="mt-8 w-full">
+      <Button
+        loading={isSubmitting}
+        disabled={!isValid || isSubmitting}
+        aria-disabled={!isValid || isSubmitting}
+        className="mt-8 h-[4.92rem] w-full"
+      >
         {t("form.button.sign-up")}
       </Button>
       <div id="AuthForm-oauthContainer" className="mt-16 flex flex-col gap-16 border-t border-slate-200 pt-32">
-        <Button variant="outlined" className="w-full">
+        <Button disabled={isSubmitting} aria-disabled={isSubmitting} variant="outlined" className="h-[4.92rem] w-full">
           {t("form.button.oauth.google")}
         </Button>
       </div>
