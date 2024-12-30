@@ -1,3 +1,4 @@
+import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import phosphorIcons from "phosphor-icons-tailwindcss";
@@ -8,6 +9,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     //* ----- WHITESPACE SYSTEM -----
@@ -103,21 +105,19 @@ export default {
         ".scrollbar::-webkit-scrollbar-thumb": {
           backgroundColor: theme("colors.gray.300"),
           borderRadius: theme("borderRadius.full"),
-        },
-
-        // * ----- NO SCROLLBAR -----
+        }, // * ----- NO SCROLLBAR -----
         ".no-scrollbar::-webkit-scrollbar": {
           width: theme("spacing.0"),
           height: theme("spacing.0"),
         },
         ".no-scrollbar": {
           // IE and Edge.
-          "-ms-overflow-style": "none",
-          // Firefox.
+          "-ms-overflow-style": "none", // Firefox.
           "scrollbar-width": "none",
         },
       });
     }),
     phosphorIcons(),
+    nextui(),
   ],
 } satisfies Config;
