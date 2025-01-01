@@ -83,6 +83,8 @@ export default {
         violet: "rgb(168, 130, 221)",
         turquioise: "rgb(100, 220, 255)",
         "crayon-red": "rgb(232, 49, 81)",
+        "crayon-red-hover": "#d12c49",
+        "crayon-red-active": "#ba2741",
         vanilla: "rgb(248, 244, 166)",
         mindaro: "rgb(219, 254, 135)",
       },

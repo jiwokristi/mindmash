@@ -7,6 +7,8 @@ import { notFound } from "next/navigation";
 
 import { Locales, routing } from "@/i18n/routing";
 
+import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+
 import { MeshGradient } from "./MeshGradient";
 import "./globals.css";
 
@@ -52,6 +54,7 @@ export default async function RootLayout({ children, params }: Readonly<RootLayo
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <MeshGradient />
+          <LocaleSwitcher />
           {children}
         </NextIntlClientProvider>
       </body>

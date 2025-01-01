@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import { AuthValues } from "@/utils/hooks/validation.auth";
 
-export async function signup(payload: AuthValues, locale: string) {
+export async function signUp(payload: AuthValues, locale: string) {
   const supabase = await createClient();
 
   const { error } = await supabase.auth.signUp(payload);
@@ -18,7 +18,7 @@ export async function signup(payload: AuthValues, locale: string) {
   revalidatePath("/" + locale, "layout");
 }
 
-export async function signin(payload: AuthValues, locale: string) {
+export async function signIn(payload: AuthValues, locale: string) {
   const supabase = await createClient();
 
   const { error } = await supabase.auth.signInWithPassword(payload);

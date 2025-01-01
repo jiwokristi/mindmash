@@ -10,7 +10,7 @@ import { Button } from "@/components/button/Button";
 
 import { AuthValues, useAuthValidation } from "@/utils/hooks/validation.auth";
 
-import { signup } from "./actions";
+import { signUp, signIn } from "./actions";
 
 interface AuthFormsProps {
   isAuthenticated: boolean;
@@ -31,16 +31,16 @@ const SignUpForm = () => {
     mode: "onTouched",
   });
 
-  const signupHandler = async (values: AuthValues) => {
-    await signup(values, locale);
+  const signUpHandler = async (values: AuthValues) => {
+    await signUp(values, locale);
   };
 
   return (
     <form
       noValidate
       id="SignUpForm"
-      onSubmit={handleSubmit(signupHandler)}
-      className="absolute left-1/2 top-1/2 flex w-[calc(100%-6.4rem)] max-w-[43.6rem] -translate-x-1/2 -translate-y-1/2 flex-col gap-16 rounded-32 bg-white bg-opacity-80 px-32 py-48 shadow-lg shadow-crayon-red"
+      onSubmit={handleSubmit(signUpHandler)}
+      className="absolute left-1/2 top-1/2 flex w-[calc(100%-6.4rem)] max-w-[43.6rem] -translate-x-1/2 -translate-y-1/2 flex-col gap-16 rounded-32 bg-white px-32 py-48 shadow-lg shadow-crayon-red"
     >
       <header id="SignUpForm-header" className="text-center">
         <h2 className="form-header">{t("form.header")}</h2>
@@ -113,16 +113,16 @@ const SignInForm = () => {
     mode: "onTouched",
   });
 
-  const signupHandler = async (values: AuthValues) => {
-    await signup(values, locale);
+  const signInHandler = async (values: AuthValues) => {
+    await signIn(values, locale);
   };
 
   return (
     <form
       noValidate
       id="SignInForm"
-      onSubmit={handleSubmit(signupHandler)}
-      className="absolute left-1/2 top-1/2 flex w-[calc(100%-6.4rem)] max-w-[43.6rem] -translate-x-1/2 -translate-y-1/2 flex-col gap-16 rounded-32 bg-white bg-opacity-80 px-32 py-48 shadow-lg shadow-crayon-red"
+      onSubmit={handleSubmit(signInHandler)}
+      className="absolute left-1/2 top-1/2 flex w-[calc(100%-6.4rem)] max-w-[43.6rem] -translate-x-1/2 -translate-y-1/2 flex-col gap-16 rounded-32 bg-white px-32 py-48 shadow-lg shadow-crayon-red"
     >
       <header id="SignInForm-header" className="text-center">
         <h2 className="form-header">{t("form.button.sign-in")}!</h2>
