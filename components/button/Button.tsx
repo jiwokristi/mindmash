@@ -3,11 +3,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Spinner, SpinnerProps } from "@nextui-org/react";
 
 const buttonVariants = cva(
-  "flex w-fit items-center justify-center gap-4 px-16 py-8 disabled:cursor-not-allowed font-semibold text-20 rounded-8",
+  "flex w-fit items-center justify-center gap-4 px-16 py-8 disabled:cursor-not-allowed font-semibold text-20 rounded-8 transition ease-in-out",
   {
     variants: {
       color: {
-        "deep-space": "bg-deep-space-1 text-white border-2 border-deep-space-1",
+        "deep-space":
+          "bg-deep-space-1 text-white border-2 border-deep-space-1 hover:bg-deep-space-2 focus:bg-deep-space-2 active:bg-deep-space-2 hover:border-deep-space-2 focus:border-deep-space-2 active:border-deep-space-2",
       },
       variant: {
         contained: "border-2",
