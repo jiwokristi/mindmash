@@ -1,32 +1,25 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
-
 import { createClient } from "@/utils/supabase/server";
 import { AuthValues } from "@/utils/hooks/validation.auth";
 
 export async function signUp(payload: AuthValues, locale: string) {
   const supabase = await createClient();
 
-  const { error } = await supabase.auth.signUp(payload);
+  const res = await supabase.auth.signUp({
+    ...payload,
+    options: {
+      emailRedirectTo: "http://localhost:3000/" + locale,
+    },
+  });
 
-  if (error) {
-    redirect("/error");
-  }
-
-  revalidatePath("/" + locale, "layout");
+  return res;
 }
 
-export async function signIn(payload: AuthValues, locale: string) {
+export async function signIn(payload: AuthValues) {
   const supabase = await createClient();
 
-  const { error } = await supabase.auth.signInWithPassword(payload);
+  const res = await supabase.auth.signInWithPassword(payload);
 
-  if (error) {
-    redirect("/error");
-  }
-
-  revalidatePath("/" + locale, "layout");
-  redirect(`/${locale}`);
+  return res;
 }

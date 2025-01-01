@@ -1,5 +1,15 @@
 {
   "AUTH": {
+    "error": {
+      "email-not-confirmed": {
+        "description": "Looks like your email isn’t confirmed yet. Check your inbox.",
+        "title": "Almost There!"
+      },
+      "limit": {
+        "description": "You're clicking a bit too fast. Give it a minute and try again!",
+        "title": "Whoa, Slow Down!"
+      }
+    },
     "form": {
       "already-have-an-account": "Already have an account?",
       "button": {
@@ -28,6 +38,10 @@
           "whitespace": "Password cannot contain spaces."
         }
       }
+    },
+    "success": {
+      "description": "Check your inbox to confirm your email and get started!",
+      "title": "Success!"
     }
   },
   "RESET-PASSWORD": {
@@ -42,5 +56,5 @@
       }
     }
   },
-  "texterify_timestamp": "2024-12-30T04:31:08Z"
+  "texterify_timestamp": "2025-01-01T16:33:27Z"
 }

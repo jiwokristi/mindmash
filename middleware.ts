@@ -4,24 +4,14 @@ import createMiddleware from "next-intl/middleware";
 import { updateSession } from "@/utils/supabase/middleware";
 
 import { routing } from "./i18n/routing";
-import { StorageKeys } from "./utils/constants/storage-keys";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  const url = request.nextUrl.clone();
+
   if (pathname === "/") {
-    const response = NextResponse.next();
-    const storedLocale = response.cookies.get(StorageKeys.MINDMASH_LOCALE);
-
-    const url = request.nextUrl.clone();
-
-    if (!storedLocale) {
-      url.pathname = "/" + routing.defaultLocale;
-      response.cookies.set(StorageKeys.MINDMASH_LOCALE, routing.defaultLocale);
-    } else {
-      url.pathname = "/" + storedLocale.value;
-    }
-
+    url.pathname = "/" + routing.defaultLocale;
     return NextResponse.redirect(url);
   }
 
