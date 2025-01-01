@@ -1,6 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 
-import { AuthForm } from "./AuthForm";
+import { AuthForms } from "./AuthForms";
 
 export default async function Home() {
   const supabase = await createClient();
@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <main id="Home" className="relative h-screen px-32">
-      <AuthForm isAuthenticated={isAuthenticated} />
+      <AuthForms isAuthenticated={isAuthenticated} />
     </main>
   );
 }

@@ -1,19 +1,24 @@
 {
   "AUTH": {
     "form": {
+      "already-have-an-account": "Already have an account?",
       "button": {
         "oauth": {
           "google": "Continue with Google"
         },
+        "sign-in": "Sign in",
         "sign-up": "Sign up"
       },
+      "dont-have-an-account": "Don't have an account?",
       "email": {
         "label": "Email"
       },
+      "forgot-password": "Forgot password?",
       "header": "Get started now!",
       "password": {
         "label": "Password"
       },
+      "reset-password": "Reset your password",
       "validation": {
         "email": {
           "invalid-email": "Please enter a valid email address."
@@ -25,5 +30,17 @@
       }
     }
   },
-  "texterify_timestamp": "2024-12-29T10:01:44Z"
+  "RESET-PASSWORD": {
+    "form": {
+      "button": {
+        "submit": "Submit"
+      },
+      "confirm-new-password": "Confirm new password",
+      "new-password": "New password",
+      "validation": {
+        "passwords-dont-match": "The passwords you entered do not match."
+      }
+    }
+  },
+  "texterify_timestamp": "2024-12-30T04:31:08Z"
 }

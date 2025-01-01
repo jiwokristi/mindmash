@@ -1,19 +1,24 @@
 {
   "AUTH": {
     "form": {
+      "already-have-an-account": "هل لديك حساب بالفعل؟",
       "button": {
         "oauth": {
           "google": "متابعة باستخدام جوجل"
         },
+        "sign-in": "تسجيل الدخول",
         "sign-up": "التسجيل"
       },
+      "dont-have-an-account": "ليس لديك حساب؟",
       "email": {
         "label": "البريد الإلكتروني"
       },
+      "forgot-password": "هل نسيت كلمة المرور؟",
       "header": "ابدأ الآن!",
       "password": {
         "label": "كلمة المرور"
       },
+      "reset-password": "إعادة تعيين كلمة المرور",
       "validation": {
         "email": {
           "invalid-email": "يرجى إدخال بريد إلكتروني صالح."
@@ -25,5 +30,17 @@
       }
     }
   },
-  "texterify_timestamp": "2024-12-29T10:01:44Z"
+  "RESET-PASSWORD": {
+    "form": {
+      "button": {
+        "submit": "إرسال"
+      },
+      "confirm-new-password": "تأكيد كلمة المرور الجديدة",
+      "new-password": "كلمة المرور الجديدة",
+      "validation": {
+        "passwords-dont-match": "كلمات المرور التي أدخلتها غير متطابقة."
+      }
+    }
+  },
+  "texterify_timestamp": "2024-12-30T04:31:08Z"
 }
