@@ -1,7 +1,7 @@
 "use client";
 
 import { ComponentProps, forwardRef, Ref, useState } from "react";
-import { useParams } from "next/navigation";
+import { useLocale } from "next-intl";
 import clsx from "clsx";
 
 import { Locales } from "@/i18n/routing";
@@ -18,8 +18,7 @@ interface PasswordProps extends ComponentProps<"div"> {
 
 export const Password = forwardRef(
   ({ inputProps, labelProps, label, error, helperText, ...props }: PasswordProps, ref: Ref<HTMLInputElement>) => {
-    const params = useParams();
-    const isArabic = params.locale === Locales.AR;
+    const locale = useLocale();
 
     const [showPassword, setShowPassword] = useState(false);
     const type = showPassword ? "text" : "password";
@@ -45,8 +44,8 @@ export const Password = forwardRef(
             type="button"
             onClick={() => setShowPassword(p => !p)}
             className={clsx("absolute top-1/2 z-10 -translate-y-1/2", {
-              "left-8": isArabic,
-              "right-8": !isArabic,
+              "left-8": locale === Locales.AR,
+              "right-8": locale !== Locales.AR,
             })}
           >
             {showPassword ? (
@@ -57,8 +56,8 @@ export const Password = forwardRef(
           </IconButton>
           <div
             className={clsx("absolute top-1/2 h-32 w-48 -translate-y-1/2 bg-inherit", {
-              "left-2 rounded-bl-8 rounded-tl-8": isArabic,
-              "right-2 rounded-br-8 rounded-tr-8": !isArabic,
+              "left-2 rounded-bl-8 rounded-tl-8": locale === Locales.AR,
+              "right-2 rounded-br-8 rounded-tr-8": locale !== Locales.AR,
             })}
           />
         </div>
