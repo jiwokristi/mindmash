@@ -7,9 +7,8 @@ import { notFound } from "next/navigation";
 
 import { Locales, routing } from "@/i18n/routing";
 
-import { LocaleSwitcher } from "@/components/LocaleSwitcher";
-
 import { MeshGradient } from "./MeshGradient";
+import { MainNavServer } from "./MainNavServer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -54,7 +53,7 @@ export default async function RootLayout({ children, params }: Readonly<RootLayo
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <MeshGradient />
-          <LocaleSwitcher />
+          <MainNavServer />
           {children}
         </NextIntlClientProvider>
       </body>

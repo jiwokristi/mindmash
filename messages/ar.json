@@ -1,9 +1,9 @@
 {
   "AUTH": {
     "error": {
-      "email-not-confirmed": {
-        "description": "يبدو أن بريدك الإلكتروني لم يتم تأكيده بعد. تحقق من صندوق الوارد لديك.",
-        "title": "قريب جدًا!"
+      "invalid-credentials": {
+        "description": "يبدو أن اسم المستخدم أو كلمة المرور مش صحيح. حاول مرة ثانية!",
+        "title": "عذرًا! بياناتك غلط"
       },
       "limit": {
         "description": "أنت تضغط بسرعة كبيرة. انتظر لحظة وحاول مرة ثانية!",
@@ -39,9 +39,20 @@
         }
       }
     },
-    "success": {
-      "description": "تحقق من صندوق الوارد لديك لتأكيد بريدك الإلكتروني والبدء!",
-      "title": "تم بنجاح!"
+    "register": {
+      "success": {
+        "description": "جاري تسجيل الدخول الآن...",
+        "title": "تم بنجاح!"
+      }
+    }
+  },
+  "BUTTON": {
+    "sign-out": "تسجيل الخروج"
+  },
+  "ERROR": {
+    "something-went-wrong": {
+      "description": "**جرّب مرة ثانية أو ارجع لاحقًا.**",
+      "title": "العنوان: عذرًا، في خطأ ما"
     }
   },
   "RESET-PASSWORD": {
@@ -56,5 +67,5 @@
       }
     }
   },
-  "texterify_timestamp": "2025-01-01T16:33:27Z"
+  "texterify_timestamp": "2025-01-03T14:59:03Z"
 }

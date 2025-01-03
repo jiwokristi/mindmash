@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { AlertProps } from "@nextui-org/react";
@@ -21,7 +21,6 @@ type Toast = Pick<AlertProps, "title" | "description" | "color" | "isVisible">;
 
 export const SignUp = () => {
   const t = useTranslations("AUTH");
-  const locale = useLocale();
 
   const router = useRouter();
 
@@ -44,21 +43,21 @@ export const SignUp = () => {
   });
 
   const signUpHandler = async (values: AuthValues) => {
-    const res = await signUp(values, locale);
-    console.log("res", res);
-    if (!res.error) {
+    const { error } = await signUp(values);
+
+    if (!error) {
       setToast({
         isVisible: true,
-        title: t("success.title"),
-        description: t("success.description"),
+        title: t("register.success.title"),
+        description: t("register.success.description"),
         color: "success",
       });
 
       window.setTimeout(() => {
-        router.push(`/${locale}/login`);
+        router.push("/dashboard");
       }, 2000);
     } else {
-      if (res.error.message.includes("For security purposes, you can only request this after")) {
+      if (error.message.includes("For security purposes, you can only request this after")) {
         setToast({
           isVisible: true,
           title: t("error.limit.title"),

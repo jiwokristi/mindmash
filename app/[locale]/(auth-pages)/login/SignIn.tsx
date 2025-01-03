@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { AlertProps } from "@nextui-org/react";
@@ -21,7 +21,6 @@ type Toast = Pick<AlertProps, "title" | "description" | "color" | "isVisible">;
 
 export const SignIn = () => {
   const t = useTranslations("AUTH");
-  const locale = useLocale();
 
   const router = useRouter();
 
@@ -44,16 +43,16 @@ export const SignIn = () => {
   });
 
   const signInHandler = async (values: AuthValues) => {
-    const res = await signIn(values);
-    console.log("res", res);
-    if (!res.error) {
-      router.push(`/${locale}/dashboard`);
+    const { error } = await signIn(values);
+
+    if (!error) {
+      router.push("/dashboard");
     } else {
-      if (res.error.message === "Email not confirmed") {
+      if (error.message === "Invalid login credentials") {
         setToast({
           isVisible: true,
-          title: t("error.email-not-confirmed.title"),
-          description: t("error.email-not-confirmed.description"),
+          title: t("error.invalid-credentials.title"),
+          description: t("error.invalid-credentials.description"),
           color: "danger",
         });
 

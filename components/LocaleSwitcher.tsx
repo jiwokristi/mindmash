@@ -1,6 +1,6 @@
 "use client";
 
-import { useTransition } from "react";
+import { Fragment, useTransition } from "react";
 import { useParams } from "next/navigation";
 import { useLocale } from "next-intl";
 import clsx from "clsx";
@@ -35,17 +35,16 @@ export const LocaleSwitcher = () => {
   return (
     <div
       id="LocaleSwitcher"
-      className="fixed right-8 top-8 z-10 flex w-fit items-center justify-center rounded-full bg-crayon-red shadow-sm shadow-crayon-red"
+      className="flex w-fit items-center justify-center rounded-full bg-crayon-red shadow-sm shadow-crayon-red"
     >
       {options.map((o, i) => (
-        <>
+        <Fragment key={o.value}>
           <span
-            key={o.value}
             role="button"
             aria-disabled={isPending}
             onClick={() => onSelectChange(o.value)}
             className={clsx(
-              "hover:bg-crayon-red-hover active:bg-crayon-red-active focus:bg-crayon-red-hover cursor-pointer px-16 py-4 text-12 font-medium text-white transition ease-in-out",
+              "cursor-pointer px-16 py-4 text-12 font-medium text-white transition ease-in-out hover:bg-crayon-red-hover focus:bg-crayon-red-hover active:bg-crayon-red-active",
               {
                 "rounded-bl-full rounded-tl-full":
                   (i === 0 && locale === Locales.EN) || (i === 1 && locale === Locales.AR),
@@ -57,7 +56,7 @@ export const LocaleSwitcher = () => {
           >
             {o.label}
           </span>
-        </>
+        </Fragment>
       ))}
     </div>
   );
