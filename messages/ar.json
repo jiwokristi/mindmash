@@ -1,0 +1,71 @@
+{
+  "AUTH": {
+    "error": {
+      "invalid-credentials": {
+        "description": "يبدو أن اسم المستخدم أو كلمة المرور مش صحيح. حاول مرة ثانية!",
+        "title": "عذرًا! بياناتك غلط"
+      },
+      "limit": {
+        "description": "أنت تضغط بسرعة كبيرة. انتظر لحظة وحاول مرة ثانية!",
+        "title": "تمهل شوي!"
+      }
+    },
+    "form": {
+      "already-have-an-account": "هل لديك حساب بالفعل؟",
+      "button": {
+        "oauth": {
+          "google": "متابعة باستخدام جوجل"
+        },
+        "sign-in": "تسجيل الدخول",
+        "sign-up": "التسجيل"
+      },
+      "dont-have-an-account": "ليس لديك حساب؟",
+      "email": {
+        "label": "البريد الإلكتروني"
+      },
+      "forgot-password": "هل نسيت كلمة المرور؟",
+      "header": "ابدأ الآن!",
+      "password": {
+        "label": "كلمة المرور"
+      },
+      "reset-password": "إعادة تعيين كلمة المرور",
+      "validation": {
+        "email": {
+          "invalid-email": "يرجى إدخال بريد إلكتروني صالح."
+        },
+        "password": {
+          "min": "يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل.",
+          "whitespace": "كلمة المرور لا يمكن أن تحتوي على مسافات."
+        }
+      }
+    },
+    "register": {
+      "success": {
+        "description": "جاري تسجيل الدخول الآن...",
+        "title": "تم بنجاح!"
+      }
+    }
+  },
+  "BUTTON": {
+    "sign-out": "تسجيل الخروج"
+  },
+  "ERROR": {
+    "something-went-wrong": {
+      "description": "**جرّب مرة ثانية أو ارجع لاحقًا.**",
+      "title": "العنوان: عذرًا، في خطأ ما"
+    }
+  },
+  "RESET-PASSWORD": {
+    "form": {
+      "button": {
+        "submit": "إرسال"
+      },
+      "confirm-new-password": "تأكيد كلمة المرور الجديدة",
+      "new-password": "كلمة المرور الجديدة",
+      "validation": {
+        "passwords-dont-match": "كلمات المرور التي أدخلتها غير متطابقة."
+      }
+    }
+  },
+  "texterify_timestamp": "2025-01-03T14:59:03Z"
+}

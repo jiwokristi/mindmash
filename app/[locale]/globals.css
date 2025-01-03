@@ -27,11 +27,27 @@
   }
 
   body {
-    @apply text-16 leading text-gray-900 dark:text-white;
+    @apply text-16 text-gray-900 dark:text-white;
   }
 }
 
 @layer components {
+  .link {
+    @apply cursor-pointer text-blue-600 transition ease-in-out hover:text-blue-800;
+  }
+
+  label.label {
+    @apply text-14 font-medium text-gray-600;
+  }
+
+  .form-header {
+    @apply text-20 font-bold text-gray-700;
+  }
+
+  p.helper-text {
+    @apply ml-8 text-14;
+  }
+
   #MeshGradient {
     @apply fixed left-0 top-0 -z-10 h-screen w-screen overflow-hidden dark:bg-gradient-to-br dark:from-deep-space-1 dark:to-deep-space-2;
   }

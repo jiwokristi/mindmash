@@ -1,0 +1,71 @@
+{
+  "AUTH": {
+    "error": {
+      "invalid-credentials": {
+        "description": "Looks like your username or password is off. Give it another shot!",
+        "title": "Oops! Wrong Info"
+      },
+      "limit": {
+        "description": "You're clicking a bit too fast. Give it a minute and try again!",
+        "title": "Whoa, Slow Down!"
+      }
+    },
+    "form": {
+      "already-have-an-account": "Already have an account?",
+      "button": {
+        "oauth": {
+          "google": "Continue with Google"
+        },
+        "sign-in": "Sign in",
+        "sign-up": "Sign up"
+      },
+      "dont-have-an-account": "Don't have an account?",
+      "email": {
+        "label": "Email"
+      },
+      "forgot-password": "Forgot password?",
+      "header": "Get started now!",
+      "password": {
+        "label": "Password"
+      },
+      "reset-password": "Reset your password",
+      "validation": {
+        "email": {
+          "invalid-email": "Please enter a valid email address."
+        },
+        "password": {
+          "min": "Password must be at least 8 characters long.",
+          "whitespace": "Password cannot contain spaces."
+        }
+      }
+    },
+    "register": {
+      "success": {
+        "description": "Logging in now...",
+        "title": "Success!"
+      }
+    }
+  },
+  "BUTTON": {
+    "sign-out": "Sign out"
+  },
+  "ERROR": {
+    "something-went-wrong": {
+      "description": "Give it another try or come back later.",
+      "title": "Oops, Something Went Wrong"
+    }
+  },
+  "RESET-PASSWORD": {
+    "form": {
+      "button": {
+        "submit": "Submit"
+      },
+      "confirm-new-password": "Confirm new password",
+      "new-password": "New password",
+      "validation": {
+        "passwords-dont-match": "The passwords you entered do not match."
+      }
+    }
+  },
+  "texterify_timestamp": "2025-01-03T14:59:03Z"
+}

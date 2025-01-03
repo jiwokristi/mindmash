@@ -1,5 +1,7 @@
+import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
+import phosphorIcons from "phosphor-icons-tailwindcss";
 
 export default {
   darkMode: "class",
@@ -7,6 +9,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     //* ----- WHITESPACE SYSTEM -----
@@ -76,6 +79,14 @@ export default {
       colors: {
         "deep-space-1": "#011627",
         "deep-space-2": "#010f1b",
+        "light-blue": "rgb(184, 243, 255)",
+        violet: "rgb(168, 130, 221)",
+        turquioise: "rgb(100, 220, 255)",
+        "crayon-red": "rgb(232, 49, 81)",
+        "crayon-red-hover": "#d12c49",
+        "crayon-red-active": "#ba2741",
+        vanilla: "rgb(248, 244, 166)",
+        mindaro: "rgb(219, 254, 135)",
       },
       rotate: {
         360: "360deg",
@@ -96,20 +107,19 @@ export default {
         ".scrollbar::-webkit-scrollbar-thumb": {
           backgroundColor: theme("colors.gray.300"),
           borderRadius: theme("borderRadius.full"),
-        },
-
-        // * ----- NO SCROLLBAR -----
+        }, // * ----- NO SCROLLBAR -----
         ".no-scrollbar::-webkit-scrollbar": {
           width: theme("spacing.0"),
           height: theme("spacing.0"),
         },
         ".no-scrollbar": {
           // IE and Edge.
-          "-ms-overflow-style": "none",
-          // Firefox.
+          "-ms-overflow-style": "none", // Firefox.
           "scrollbar-width": "none",
         },
       });
     }),
+    phosphorIcons(),
+    nextui(),
   ],
 } satisfies Config;
